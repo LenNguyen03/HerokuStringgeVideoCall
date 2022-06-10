@@ -39,10 +39,10 @@ workflows:
   build-deploy:
     jobs:
       - say-hello
-      - build-and-push
+      - build-and-push:
+          requires:
+            - say-hello
           filter:
-            requires:
-              - say-hello
             branches:
               only:
                 - master
